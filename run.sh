@@ -1,0 +1,1 @@
+docker run --detach -p 8765:8765 -it chatapp/backend:latest
