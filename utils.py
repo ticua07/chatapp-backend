@@ -4,11 +4,17 @@ from uuid import uuid4
 
 class ChatGroup:
     def __init__(self, title: str, description: str):
-        # self.id = uuid4()
         self.title = title
         self.description = description
         self.connected = []
         self.messages = []
+
+    def GetGroupData(self):
+        return {
+            "title": self.title,
+            "description": self.description,
+            "connected": len(self.connected),
+        }
 
     def GetMessages(self, lastN):
         last_messages = self.messages[len(self.messages) - lastN : len(self.messages)]
